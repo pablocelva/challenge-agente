@@ -1,4 +1,4 @@
-# Challenge Agente Ia BimBam Buy
+# Challenge Agente IA BimBam Buy
 
 Para este Challenge decidí hacer un agente de IA que pueda responder preguntas e informar a clientes de BimBam Buy. 
 
