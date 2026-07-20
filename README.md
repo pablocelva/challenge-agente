@@ -8,31 +8,6 @@ BimBamIA es un agente de inteligencia artificial diseñado para brindar atenció
 - Streamlit: [Link](https://bimbam-ia-agente-5k8akdby4u6sfz72ufkfbe.streamlit.app/)
 <!-- - Video:  -->
 
-## Arquitectura
-
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  Streamlit  │────▶│  LangGraph   │───▶│   Cohere    │
-│  (Frontend) │     │ (Orquestador)│     │  (LLM + Emb)│
-└─────────────┘     └──────┬───────┘     └─────────────┘
-                           │
-                    ┌──────▼───────┐
-                    │  ChromaDB    │
-                    │  (Vector DB) │
-                    └──────┬───────┘
-                           │
-                    ┌──────▼───────┐
-                    │   SQLite     │
-                    │  (Checkpoint)│
-                    └──────────────┘
-```
-
-### Flujo del Agente
-
-1. **Clasificación de intención**: El agente analiza la pregunta y determina si requiere búsqueda documental (`DOCUMENT`) o es una respuesta general (`GENERAL`).
-2. **Recuperación de documentos**: Si es DOCUMENT, busca los chunks más relevantes en ChromaDB.
-3. **Generación de respuesta**: Utiliza el contexto recuperado para generar una respuesta precisa con Cohere.
-4. **Formateo**: Presenta la respuesta de forma clara y profesional al usuario.
 
 ## Tecnologías
 
@@ -80,6 +55,32 @@ bimbam-ia-agente/
     ├── faq-metodos-pago.pdf
     └── manual-garantia.pdf
 ```
+
+## Arquitectura
+
+```
+┌─────────────┐     ┌──────────────┐     ┌─────────────┐
+│  Streamlit  │────▶│  LangGraph   │───▶│   Cohere    │
+│  (Frontend) │     │ (Orquestador)│     │  (LLM + Emb)│
+└─────────────┘     └──────┬───────┘     └─────────────┘
+                           │
+                    ┌──────▼───────┐
+                    │  ChromaDB    │
+                    │  (Vector DB) │
+                    └──────┬───────┘
+                           │
+                    ┌──────▼───────┐
+                    │   SQLite     │
+                    │  (Checkpoint)│
+                    └──────────────┘
+```
+
+### Flujo del Agente
+
+1. **Clasificación de intención**: El agente analiza la pregunta y determina si requiere búsqueda documental (`DOCUMENT`) o es una respuesta general (`GENERAL`).
+2. **Recuperación de documentos**: Si es DOCUMENT, busca los chunks más relevantes en ChromaDB.
+3. **Generación de respuesta**: Utiliza el contexto recuperado para generar una respuesta precisa con Cohere.
+4. **Formateo**: Presenta la respuesta de forma clara y profesional al usuario.
 
 ## Instalación
 
