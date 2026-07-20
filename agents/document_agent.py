@@ -11,7 +11,7 @@ llm = ChatCohere(
 
 def run_document_agent(question: str, context: str) -> str:
     messages = [
-        SystemMessage(context=DOCUMENT_AGENT_PROMPT.format(context=context)),
+        SystemMessage(content=DOCUMENT_AGENT_PROMPT.format(context=context)),
         HumanMessage(content=question)
     ]
     response = llm.invoke(messages)
