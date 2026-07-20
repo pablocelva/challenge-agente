@@ -5,8 +5,8 @@
 BimBamIA es un agente de inteligencia artificial diseñado para brindar atención al cliente automatizada para **BimBam Buy**, una plataforma de e-commerce. El agente utiliza Retrieval-Augmented Generation (RAG) para responder preguntas basándose en la documentación oficial de la empresa, cubriendo temas como devoluciones, envíos, pagos, garantías y programa de afiliados.
 
 ## Links Demo
-- Streamlit: 
-- Video: 
+- Streamlit: [Link](https://bimbam-ia-agente-5k8akdby4u6sfz72ufkfbe.streamlit.app/)
+<!-- - Video:  -->
 
 ## Arquitectura
 
