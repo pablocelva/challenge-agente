@@ -43,6 +43,40 @@ BimBamIA es un agente de inteligencia artificial diseñado para brindar atenció
 | Persistencia | SQLite (SqliteSaver) | - |
 | Lenguaje | Python | 3.12+ |
 
+## Estructura del Proyecto
+
+```
+bimbam-ia-agente/
+├── app.py                  # Interfaz Streamlit
+├── config.py               # Configuración centralizada
+├── requirements.txt        # Dependencias
+├── .env.example            # Variables de entorno (ejemplo)
+├── graph/
+│   ├── __init__.py
+│   ├── builder.py          # Construcción del grafo LangGraph
+│   ├── state.py            # Definición del estado del agente
+│   ├── nodes.py            # Nodos del grafo
+│   └── edges.py            # Condicionales de routing
+├── agents/
+│   ├── __init__.py
+│   ├── document_agent.py   # Agente de respuesta documental
+│   └── prompts.py          # Prompts del sistema
+├── rag/
+│   ├── __init__.py
+│   ├── loader.py           # Carga y splitting de PDFs
+│   ├── embeddings.py       # Configuración de Cohere Embed
+│   └── vectorstore.py      # Creación del ChromaDB
+├── tools/
+│   ├── __init__.py
+│   └── search_tools.py     # Herramienta de búsqueda
+└── docs/
+    ├── reembolsos-devoluciones.pdf
+    ├── programa-afiliados.pdf
+    ├── guia-envios.pdf
+    ├── faq-metodos-pago.pdf
+    └── manual-garantia.pdf
+```
+
 ## Instalación
 
 ### Prerrequisitos
@@ -55,8 +89,8 @@ BimBamIA es un agente de inteligencia artificial diseñado para brindar atenció
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/challenge-agente.git
-cd challenge-agente
+git clone https://github.com/pablocelva/bimbam-ia-agente.git
+cd bimbam-ia-agente
 ```
 
 2. Crear entorno virtual:
@@ -157,39 +191,6 @@ La aplicación está desplegada en **Streamlit Cloud**.
 - El ChromaDB se reconstruye automáticamente al iniciar (~20-30 segundos)
 - SQLite es efímero en Streamlit Cloud (se reinicia con cada deploy)
 
-## Estructura del Proyecto
-
-```
-challenge-agente/
-├── app.py                  # Interfaz Streamlit
-├── config.py               # Configuración centralizada
-├── requirements.txt        # Dependencias
-├── .env.example            # Variables de entorno (ejemplo)
-├── graph/
-│   ├── __init__.py
-│   ├── builder.py          # Construcción del grafo LangGraph
-│   ├── state.py            # Definición del estado del agente
-│   ├── nodes.py            # Nodos del grafo
-│   └── edges.py            # Condicionales de routing
-├── agents/
-│   ├── __init__.py
-│   ├── document_agent.py   # Agente de respuesta documental
-│   └── prompts.py          # Prompts del sistema
-├── rag/
-│   ├── __init__.py
-│   ├── loader.py           # Carga y splitting de PDFs
-│   ├── embeddings.py       # Configuración de Cohere Embed
-│   └── vectorstore.py      # Creación del ChromaDB
-├── tools/
-│   ├── __init__.py
-│   └── search_tools.py     # Herramienta de búsqueda
-└── docs/
-    ├── reembolsos-devoluciones.pdf
-    ├── programa-afiliados.pdf
-    ├── guia-envios.pdf
-    ├── faq-metodos-pago.pdf
-    └── manual-garantia.pdf
-```
 
 ## Licencia
 
